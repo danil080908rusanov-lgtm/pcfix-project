@@ -1,0 +1,403 @@
+/* Обнуление */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Переменные */
+:root {
+  --color-primary: #234C6A;
+  --color-primary-dark: #1B3C53;
+  --color-bg: #f8f9fb;
+  --color-text: #0b0b0f;
+  --color-light: #ffffff;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Глобальные */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  width: auto;
+  height: 100%;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Шапка */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.header__nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header__nav a {
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header__nav a:hover {
+  color: var(--color-primary);
+}
+/* хиро баннер */
+
+.hero__img {
+  width: 100%;
+  max-width: 450px;
+  min-width: 300px;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+.hero {
+  min-height: 100vh;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+    url("../img/hero.jpg") center/cover no-repeat;
+  color: var(--color-light);
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero__btn {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.hero__btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* О нас */
+.about{
+  max-height: 800px;
+}
+.about__inner {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  background: var(--color-primary-dark);  
+}
+
+.about__text {
+  flex: 1.2;
+  background: var(--color-primary-dark);
+  color: #fff;
+  padding: 100px 100px 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.about__media {
+  flex: 1;
+  display: flex;
+}
+
+.about__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+/* Наша команда */
+.team {
+  padding: 5rem 2rem;
+  background: #fff;
+}
+
+.team__title {
+  font-family: var(--font-heading);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.team__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.team__member {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  background: var(--color-bg);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: transform 0.3s;
+}
+
+.team__member:hover {
+  transform: translateY(-5px);
+}
+
+.team__name {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.team__photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  margin: 0 auto;
+}
+
+/* Цены */
+
+.prices {
+  position: relative;
+  overflow: hidden;
+}
+
+.prices__bg {
+  position: absolute;
+  top: 10%; /* сдвигаем фон ниже */
+  left: 0;
+  width: 100%;
+  height: 150%; /* достаточно для параллакса */
+  background-image: url("../img/price.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: translateY(-50%); /* центрируем по вертикали */
+  z-index: 0;
+  will-change: transform;
+}
+
+.prices::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+}
+
+.prices__inner {
+  position: relative;
+  z-index: 2;
+  padding: 5rem 2rem;
+}
+.prices__table-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.prices__table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  border: 1px solid #fff;
+  text-align: center;
+}
+
+.prices__table th,
+.prices__table td {
+  padding: 1rem 1.5rem;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.prices__table th {
+  font-weight: 600;
+}
+
+.prices__title{
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Контактная инфа */
+
+.contact {
+  background: #fff;
+
+}
+
+.contact__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+.contact__info {
+  flex: 1;
+  min-width: 250px;
+  padding-left: 150px;
+}
+
+.contact__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact__icon {
+  font-size: 1.2rem;
+}
+
+.contact__text {
+  font-size: 1rem;
+}
+
+.contact__map-link {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.contact__form-wrapper {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact__label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.contact__input,
+.contact__textarea {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 0.5rem 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact__submit {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact__submit:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Футер */
+.footer {
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer__socials a {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer__socials a:hover {
+  color: #ddd;
+}
