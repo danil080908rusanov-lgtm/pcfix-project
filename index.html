@@ -184,16 +184,12 @@
   const hero = document.querySelector('.hero');
   const pricesInner = document.querySelector('.prices__inner');
   const speed = 0.5;
-
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
-
-    // оба фона двигаются синхронно, как одна картинка
     hero.style.backgroundPositionY = (scrolled * speed) + 'px';
   });
   const pricesBg = document.querySelector('.prices__bg');
   const pricesSection = document.querySelector('.prices');
-
   window.addEventListener('scroll', () => {
     const scroll = window.pageYOffset;
     const pricesTop = pricesSection.offsetTop;
