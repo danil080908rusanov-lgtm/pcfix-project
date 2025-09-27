@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="PCFix — профессиональный сервисный центр по ремонту и настройке компьютеров, ноутбуков и другой техники. Диагностика, чистка, апгрейд, установка ПО.">
+  <meta name="description" content="PCFix - профессиональный сервисный центр по ремонту и настройке компьютеров, ноутбуков и другой техники. Диагностика, чистка, апгрейд, установка ПО.">
   <meta name="keywords" content="ремонт компьютеров, ремонт ноутбуков, чистка ПК, диагностика компьютера, апгрейд ПК, настройка программ, сервисный центр Алматы">
   <meta name="author" content="PCFix">
 
-  <meta property="og:title" content="PCFix — Сервис и ремонт компьютеров">
+  <meta property="og:title" content="PCFix - Сервис и ремонт компьютеров">
   <meta property="og:description" content="Профессиональный ремонт и настройка ПК, ноутбуков и техники любой сложности. Диагностика, чистка, апгрейд, установка ПО.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pcfix.kz/">
   <meta property="og:image" content="https://pcfix.kz/img/preview.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PCFix — Сервис и ремонт компьютеров">
+  <meta name="twitter:title" content="PCFix - Сервис и ремонт компьютеров">
   <meta name="twitter:description" content="Профессиональный ремонт и настройка ПК, ноутбуков и техники любой сложности. Диагностика, чистка, апгрейд, установка ПО.">
   <meta name="twitter:image" content="https://pcfix.kz/img/preview.jpg">
   <title>PCFix — Сервис и ремонт компьютеров</title>
@@ -141,14 +141,14 @@
             </li>
             <li class="contact__item">
               <i class="fa-solid fa-location-dot contact__icon"></i>
-              <span class="contact__text">г. Алматы, ул. Компьютерная 15</span>
+              <span class="contact__text">г. Алматы, Пр. Сакена Сейфуллина 519</span>
             </li>
           </ul>
           <a target="_blank" class="button button--primary contact__map-link" href="#">Открыть на 2GIS</a>
         </div>
 
         <div class="contact__form-wrapper">
-          <form class="contact__form" action="#" method="post">
+          <form class="contact__form" method="post">
             <label class="contact__label">
               Имя
               <input class="contact__input" type="text" name="name">
@@ -184,9 +184,13 @@
   const hero = document.querySelector('.hero');
   const pricesInner = document.querySelector('.prices__inner');
   const speed = 0.5;
+  document.addEventListener('DOMContentLoaded', () => {
+    const scroll = window.pageYOffset;
+    hero.style.backgroundPositionY = (scroll * speed) + 'px';
+  });
   window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    hero.style.backgroundPositionY = (scrolled * speed) + 'px';
+    const scroll = window.pageYOffset;
+    hero.style.backgroundPositionY = (scroll * speed) + 'px';
   });
   const pricesBg = document.querySelector('.prices__bg');
   const pricesSection = document.querySelector('.prices');

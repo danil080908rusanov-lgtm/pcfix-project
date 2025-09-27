@@ -121,6 +121,7 @@ img {
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
+  z-index: 1; 
 }
 
 .hero__title {
@@ -148,6 +149,7 @@ img {
 /* О нас */
 .about{
   max-height: 800px;
+  z-index: 2;  
 }
 .about__inner {
   display: flex;
@@ -231,18 +233,19 @@ img {
 .prices {
   position: relative;
   overflow: hidden;
+  z-index: 2; 
 }
 
 .prices__bg {
   position: absolute;
-  top: 10%; /* сдвигаем фон ниже */
+  top: 0%;
   left: 0;
   width: 100%;
-  height: 150%; /* достаточно для параллакса */
+  height: 150%;
   background-image: url("../img/price.jpg");
   background-size: cover;
   background-position: center;
-  transform: translateY(-50%); /* центрируем по вертикали */
+  transform: translateY(-30%);
   z-index: 0;
   will-change: transform;
 }
@@ -291,7 +294,7 @@ img {
   margin-bottom: 10px;
 }
 
-/* Контактная инфа */
+/* Контактная информация */
 
 .contact {
   background: #fff;
