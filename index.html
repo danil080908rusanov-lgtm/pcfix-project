@@ -184,16 +184,25 @@
   const hero = document.querySelector('.hero');
   const pricesInner = document.querySelector('.prices__inner');
   const speed = 0.5;
+  const pricesBg = document.querySelector('.prices__bg');
+  const pricesSection = document.querySelector('.prices');
   document.addEventListener('DOMContentLoaded', () => {
     const scroll = window.pageYOffset;
     hero.style.backgroundPositionY = (scroll * speed) + 'px';
+  
+    const pricesTop = pricesSection.offsetTop;
+    const pricesHeight = pricesSection.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    if (scroll + windowHeight > pricesTop && scroll < pricesTop + pricesHeight) {
+      const offset = scroll - pricesTop;
+      pricesBg.style.transform = `translateY(${offset * 0.5}px)`;
+    }
   });
   window.addEventListener('scroll', () => {
     const scroll = window.pageYOffset;
     hero.style.backgroundPositionY = (scroll * speed) + 'px';
   });
-  const pricesBg = document.querySelector('.prices__bg');
-  const pricesSection = document.querySelector('.prices');
   window.addEventListener('scroll', () => {
     const scroll = window.pageYOffset;
     const pricesTop = pricesSection.offsetTop;
